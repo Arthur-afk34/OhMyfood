@@ -5,91 +5,7 @@
 
 /*Chargement de la page*/
 
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700&family=Shrikhand:wght@100;200;300;400;500;600;700&display=swap);
-
-/*placement du logo*/
-
-.header {
-    padding: 16px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
-    position: relative;
-    display: flex;
-    flex-direction: row;
-}
-
-.header_logo {
-    flex: 15;
-    margin-left: -20px;
-    cursor: pointer;
-}
-
-.logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 25px;
-}
-
-.logo a {
-    /*La taille occupée dans l’espace disponible*/
-    flex: 1;
-    /* position sur l'axe Z dans un espace 3D*/
-    z-index: 1;
-    font-size: 1.5em;
-}
-
-.load {
-    animation: fondu 1s 2s forwards;
-}
-
-.like:hover>.like_empty {
-    animation: like_empty 0.5s ease-in-out both;
-}
-
-.like:hover>.like_full {
-    animation: like_full 0.5s ease-in-out both;
-    animation-delay: 0.5s;
-    display: inline;
-}
-
-
-/*Rotation coche*/
-
-.check i {
-    animation: spin 1s ease;
-}
-
-
-/*Chargement de chaque page restaurant*/
-
-.choix {
-    animation: appear 0.8s ease-in-out both;
-}
-
-.choix:nth-child(1) {
-    animation-delay: 0ms;
-}
-
-.choix:nth-child(2) {
-    animation-delay: 200ms;
-}
-
-.choix:nth-child(3) {
-    animation-delay: 400ms;
-}
-
-.choix:nth-child(4) {
-    animation-delay: 600ms;
-}
-
-.choix:hover .check {
-    animation: slide 0.3s both;
-}
-
-.choix:hover .choix_container {
-    animation: slide_container 0.3s both;
-}
-
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700&family=Shrikhand:wght@100;200;300;400;500;600;700&display=swap";
 
 /*Loader page d'accueil*/
 
@@ -179,11 +95,165 @@
     }
 }
 
+.header {
+    padding: 16px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
 
-/*caractéristiques communes pour boutons "Explorer + Commander*/
+.header_logo {
+    flex: 15;
+    margin-left: -20px;
+    cursor: pointer;
+}
 
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 25px;
+}
 
-/*appliquer ce style “Roboto” à toutes les balises*/
+.logo a {
+    flex: 1;
+    z-index: 1;
+    font-size: 1.5em;
+}
+
+.logo i {
+    color: black;
+}
+
+.load {
+    animation: fondu 1s 2s forwards;
+    background-color: black;
+    opacity: 0.9;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    display: grid;
+    place-items: center;
+    color: rgb(255, 121, 218);
+}
+
+.like {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.like:hover>.like_empty {
+    animation: like_empty 0.5s ease-in-out both;
+    animation: like_empty 0.5s ease-in-out both;
+}
+
+.like:hover>.like_full {
+    animation: like_full 0.5s ease-in-out both;
+    animation-delay: 0.5s;
+    display: inline;
+    animation: like_full 0.5s ease-in-out both;
+    animation-delay: 0.5s;
+    display: inline;
+}
+
+.check {
+    background-color: #99edd0;
+    font-size: 20px;
+    font-weight: 900;
+    border: solid #99edd0 5px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: white;
+    display: none;
+    place-items: center;
+    width: 80px;
+}
+
+.check i {
+    animation: spin 1s ease;
+    font-size: 1.5em;
+}
+
+.choix {
+    animation: appear 0.8s ease-in-out both;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.3em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.13);
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.choix:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.choix:nth-child(2) {
+    animation-delay: 200ms;
+}
+
+.choix:nth-child(3) {
+    animation-delay: 400ms;
+}
+
+.choix:nth-child(4) {
+    animation-delay: 600ms;
+}
+
+.choix:hover .check {
+    animation: slide 0.3s both;
+    width: 80px;
+    display: grid;
+}
+
+.choix:hover .choix_container {
+    animation: slide_container 0.3s both;
+}
+
+.choix .choix_container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.choix b {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.choix .choix_description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.choix .choix_description p {
+    font-size: 0.9em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 * {
     font-family: "Roboto", sans-serif;
@@ -191,33 +261,30 @@
     box-sizing: border-box;
 }
 
-
-/*pour que les titres soit en Shrikland*/
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: "Shrikhand", cursive;
-}
-
-
-/*.lieu + nom du restaurant page accueil*/
-
-h5 {
-    font-size: 1em;
-}
-
-
-/*Logo*/
-
 h1 {
+    font-family: "Shrikhand", cursive;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     font-size: 2em;
     font-weight: bold;
+}
+
+h2 {
+    font-family: "Shrikhand", cursive;
+}
+
+h3 {
+    font-family: "Shrikhand", cursive;
+}
+
+h4 {
+    font-family: "Shrikhand", cursive;
+}
+
+h5 {
+    font-size: 1em;
 }
 
 .nav {
@@ -228,7 +295,6 @@ h1 {
     align-items: center;
     justify-content: center;
     height: 60px;
-    /* box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45), 0px 25px 20px -20px rgba(0, 0, 0, 0.45); */
 }
 
 .nav_container {
@@ -258,26 +324,17 @@ h1 {
 
 .nav_container_input:focus {
     outline: none;
-    /* enlevement de la bordure entrée input */
-}
-
-.logo i {
-    color: black;
 }
 
 .lieu h5 {
     display: inline-flex;
     flex-direction: row;
-    /*force le titre (enfant) à rester dans le .lieu (sélecteur parent)*/
     box-sizing: border-box;
     height: 100%;
     padding-left: 15px;
     color: black;
     opacity: 0.7;
 }
-
-
-/*section sur la présentation de la société*/
 
 .presentation {
     padding: 40px 40px 60px 40px;
@@ -301,11 +358,7 @@ h1 {
     font-size: 1.1em;
 }
 
-
-/*bouton Explorer nos restaurants - Index*/
-
 .explorer {
-    /*mixins sont appelés avec @ + le nom choisi dans le sélecteur concerné*/
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -320,22 +373,12 @@ h1 {
     transition-duration: 0.25s;
     margin: auto;
     width: 70%;
-    /*Esperluette : appliquer le pseudo-élement enfant à la class parent .explorer*/
-}
-
-@media screen and (min-width: 1024px) {
-    .explorer {
-        width: 220px;
-    }
 }
 
 .explorer:hover {
     transform: scale(1.01);
     opacity: 0.9;
 }
-
-
-/*bouton Commander sur chaque html des restaurants*/
 
 .commander {
     display: flex;
@@ -356,39 +399,9 @@ h1 {
     border: none;
 }
 
-@media screen and (min-width: 1024px) {
-    .commander {
-        width: 300px;
-    }
-}
-
 .commander:hover {
     transform: scale(1.01);
     opacity: 0.9;
-}
-
-.like:hover>.like_empty {
-    animation: like_empty 0.5s ease-in-out both;
-}
-
-.like:hover>.like_full {
-    animation: like_full 0.5s ease-in-out both;
-    animation-delay: 0.5s;
-    display: inline;
-}
-
-
-/*l'ensemble des icones coeur du projet*/
-
-.like {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    /*ordre d’apparition des couches successives (ce qui doit s’afficher en 1er sur la page puis 2, 3....)*/
-    z-index: 2;
 }
 
 .like_full {
@@ -410,8 +423,12 @@ h1 {
     position: absolute;
 }
 
-
-/*section mais pour 1., 2., 3.*/
+.etapes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 35px 30px 35px;
+}
 
 .etapes ol {
     counter-reset: etape;
@@ -437,8 +454,11 @@ h1 {
     left: -12px;
 }
 
-
-/*nom de liste 1. ou 2. ou 3.*/
+.etapes h3 {
+    font-size: 1.5em;
+    font-family: "roboto";
+    margin-bottom: 20px;
+}
 
 .etape {
     padding: 24px;
@@ -462,63 +482,22 @@ h1 {
 }
 
 .etape i {
-    /*espacement entre l'icône et le texte à sa droite*/
     margin-right: 20px;
 }
 
-
-/*Donner une contrainte*/
+.choix_wrapper {
+    display: flex;
+    flex-direction: column;
+}
 
 .choix_wrapper ol {
     display: flex;
     flex-direction: column;
-    /*Adapter cette contrainte à l'affiche sur PC*/
-}
-
-@media screen and (min-width: 1024px) {
-    .choix_wrapper ol {
-        flex-direction: row;
-        width: 100%;
-    }
-}
-
-
-/*L’ensemble : Fonctionnement + 1., 2., 3.*/
-
-.etapes {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding: 35px 30px 35px;
-}
-
-.etapes h3 {
-    font-size: 1.5em;
-    font-family: "roboto";
-    margin-bottom: 20px;
-}
-
-
-/*chargement page*/
-
-.load {
-    background-color: black;
-    opacity: 0.9;
-    height: 100vh;
-    position: fixed;
-    inset: 0;
-    z-index: 5;
-    display: grid;
-    place-items: center;
-    color: rgb(255, 121, 218);
 }
 
 main {
     background-color: #f8f8f8;
 }
-
-
-/*l’ensemble des cards*/
 
 .restaurants {
     background-color: #eeeeee;
@@ -540,31 +519,15 @@ main {
     position: relative;
 }
 
-.restaurant_wrapper {
-    padding-bottom: 80px;
-}
-
-@media screen and (min-width: 1024px) {
-    .restaurants .choix_wrapper article {
-        width: 24%;
-    }
-}
-
 .restaurants .choix_wrapper article>.like {
     position: absolute;
     bottom: 60px;
     right: 20px;
 }
 
-@media screen and (min-width: 1024px) {
-    .restaurants .choix_wrapper {
-        flex-direction: row;
-        column-gap: 15px;
-    }
+.restaurant_wrapper {
+    padding-bottom: 80px;
 }
-
-
-/*cards séparement*/
 
 .card_restaurant {
     display: flex;
@@ -580,18 +543,6 @@ main {
     z-index: 1;
 }
 
-.card_restaurant_image {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-
 .card_restaurant .mention_nouveau {
     background-color: #99e2d0;
     color: #1b6150;
@@ -601,6 +552,19 @@ main {
     top: 15px;
     right: 15px;
     font-weight: bolder;
+}
+
+.card_restaurant_image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .card_restaurant_description {
@@ -622,9 +586,6 @@ main {
     row-gap: 5px;
 }
 
-
-/*menu du restaurant sur la page du restaurant concerné*/
-
 .menu {
     display: flex;
     flex-direction: column;
@@ -637,7 +598,6 @@ main {
     padding-right: 20px;
     margin-top: -100px;
     z-index: 1;
-    /*Titre*/
 }
 
 .menu .header_menu {
@@ -656,9 +616,6 @@ main {
     justify-content: flex-start;
     align-items: center;
 }
-
-
-/* Insérer correctement l’image de fond pages restaurants */
 
 .fond1 {
     height: 400px;
@@ -684,17 +641,11 @@ main {
     background-size: cover;
 }
 
-
-/*Entrées, Plats, Desserts*/
-
 .categorie {
     padding-left: 20px;
     padding-top: 35px;
     font-size: 1.2em;
 }
-
-
-/*Trait vert sous les sous-titres*/
 
 .souligne {
     font-size: 1.3em;
@@ -703,26 +654,81 @@ main {
     width: 53px;
 }
 
-.choix_wrapper {
+footer {
+    background-color: #383838;
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
+footer p {
+    font-family: "Shrikhand", "cursive";
+    font-size: 20px;
+    margin: 0 0 16px;
+    color: #fff;
+}
+
+ul {
+    padding: 0;
+}
+
+.footer_link {
+    display: flex;
+    flex-direction: row;
+    font-family: "roboto";
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer_link a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer_link i {
+    margin-right: 15px;
+    font-size: 0.8em;
+    width: 10px;
+}
+
 @media screen and (min-width: 1024px) {
+    .explorer {
+        width: 220px;
+    }
+    .commander {
+        width: 300px;
+    }
     .choix_wrapper {
         flex-direction: column;
+        -moz-column-gap: 15px;
         column-gap: 15px;
         margin-left: 170px;
         margin-right: 170px;
+    }
+    .choix_wrapper ol {
+        flex-direction: row;
+        width: 100%;
+    }
+    .restaurants .choix_wrapper {
+        flex-direction: row;
+        -moz-column-gap: 15px;
+        column-gap: 15px;
+    }
+    .restaurants .choix_wrapper article {
+        width: 24%;
+    }
+    .restaurants h3 {
+        font-family: "roboto";
+        font-size: 1.5em;
+        padding: 50px 10px 0;
+        margin-left: 170px;
     }
     .menu {
         width: 70%;
         margin-left: 220px;
         padding-left: 50px;
         padding-right: 50px;
-    }
-    .categorie {
-        margin-left: 150px;
     }
     .menu .header_menu {
         display: flex;
@@ -733,6 +739,9 @@ main {
         margin: 0 auto;
         margin-bottom: 30px;
         margin-top: 50px;
+    }
+    .categorie {
+        margin-left: 150px;
     }
     .like {
         display: flex;
@@ -766,108 +775,6 @@ main {
         margin-left: 170px;
         margin-bottom: 20px;
     }
-    .restaurants h3 {
-        font-family: "roboto";
-        font-size: 1.5em;
-        padding: 50px 10px 0;
-        margin-left: 170px;
-    }
-}
-
-
-/*1 card*/
-
-.choix {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 1.3em;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-radius: 20px;
-    background-color: white;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.13);
-    width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    opacity: 0;
-}
-
-.choix .choix_container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    width: 100%;
-}
-
-.choix b {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.choix .choix_description {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.choix .choix_description p {
-    font-size: 0.9em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-.choix:hover .check {
-    width: 80px;
-    display: grid;
-}
-
-.check {
-    background-color: #99edd0;
-    font-size: 20px;
-    font-weight: 900;
-    border: solid #99edd0 5px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    color: white;
-    display: none;
-    place-items: center;
-    width: 80px;
-}
-
-.check i {
-    font-size: 1.5em;
-}
-
-footer {
-    background-color: #383838;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-footer p {
-    font-family: "Shrikhand", "cursive";
-    font-size: 20px;
-    margin: 0 0 16px;
-    color: #fff;
-}
-
-
-/*mise en forme avec ul*/
-
-ul {
-    padding: 0;
-}
-
-@media screen and (min-width: 1024px) {
     footer {
         background-color: #383838;
         padding: 20px;
@@ -892,7 +799,6 @@ ul {
         align-items: center;
         margin-right: 65px;
     }
-    /*pied de page avec lien = a*/
     .footer_link {
         display: flex;
         flex-direction: row;
@@ -911,29 +817,3 @@ ul {
         width: 10px;
     }
 }
-
-
-/*pied de page avec lien = a*/
-
-.footer_link {
-    display: flex;
-    flex-direction: row;
-    font-family: "roboto";
-    color: white;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.footer_link a {
-    text-decoration: none;
-    color: white;
-}
-
-.footer_link i {
-    margin-right: 15px;
-    font-size: 0.8em;
-    width: 10px;
-}
-
-
-/*# sourceMappingURL=style.css.map */
