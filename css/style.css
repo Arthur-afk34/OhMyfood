@@ -37,7 +37,9 @@
 @keyframes slide {
     0% {
         display: grid;
+        /* redimensionne un élément horizontalement */
         transform: scaleX(0);
+        /* définit l'origine des transformations d'un élément */
         transform-origin: right;
     }
     100% {
@@ -54,6 +56,7 @@
         width: 100%;
     }
     100% {
+        /* effectue des calculs lors de la spécification des valeurs des propriétés CSS */
         width: calc(100% - 80px);
     }
 }
@@ -88,6 +91,7 @@
 @keyframes appear {
     0% {
         opacity: 0;
+        /* repositionne un élément verticalement sur le plan 2D */
         transform: translateY(50px);
     }
     100% {
@@ -139,6 +143,9 @@
     color: rgb(255, 121, 218);
 }
 
+
+/* class boutton like */
+
 .like {
     display: flex;
     flex-direction: row;
@@ -149,19 +156,24 @@
     z-index: 2;
 }
 
+
+/* sur le hover le boutton vide disparait  */
+
 .like:hover>.like_empty {
     animation: like_empty 0.5s ease-in-out both;
-    animation: like_empty 0.5s ease-in-out both;
 }
+
+
+/* sur le hover apres 0.5 secondele boutton remplie apparait */
 
 .like:hover>.like_full {
     animation: like_full 0.5s ease-in-out both;
     animation-delay: 0.5s;
     display: inline;
-    animation: like_full 0.5s ease-in-out both;
-    animation-delay: 0.5s;
-    display: inline;
 }
+
+
+/* cote vert qui apparait sur le hover choix */
 
 .check {
     background-color: #99edd0;
@@ -176,10 +188,16 @@
     width: 80px;
 }
 
+
+/* animation qui tourne dans le cote qui apparait */
+
 .check i {
     animation: spin 1s ease;
     font-size: 1.5em;
 }
+
+
+/* card des restaurant avec l'animation appear qui fait apparaitre les card choix une par une*/
 
 .choix {
     animation: appear 0.8s ease-in-out both;
@@ -215,6 +233,9 @@
     animation-delay: 600ms;
 }
 
+
+/* sur hover l'animation ce lance */
+
 .choix:hover .check {
     animation: slide 0.3s both;
     width: 80px;
@@ -237,6 +258,7 @@
     margin-bottom: 5px;
     font-size: 1em;
     white-space: nowrap;
+    /* mot-clé qui indique qu'on affiche une ellipse */
     text-overflow: ellipsis;
     overflow: hidden;
 }
@@ -251,6 +273,7 @@
 .choix .choix_description p {
     font-size: 0.9em;
     white-space: nowrap;
+    /* mot-clé qui indique qu'on affiche une ellipse */
     text-overflow: ellipsis;
     overflow: hidden;
 }
@@ -289,7 +312,8 @@ h5 {
 
 .nav {
     width: 100%;
-    box-shadow: 4px 4px 0px 0px #d3d2d2 inset;
+    /* box-shadow: 4px 4px 0px 0px #d3d2d2 inset; */
+    box-shadow: 0 8px 12px 4px black;
     background: linear-gradient(#e2e2e2, #f3f3f3);
     display: flex;
     align-items: center;
@@ -342,6 +366,7 @@ h5 {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
+    box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.2);
 }
 
 .presentation h3 {
