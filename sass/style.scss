@@ -288,7 +288,7 @@ h2 {
 }
 
 h3 {
-    font-family: $font-family_2;
+    font-size: 1em;
 }
 
 h4 {
@@ -355,7 +355,7 @@ h5 {
     display: flex;
     flex-direction: column;
     row-gap: 30px;
-    h3 {
+    h2 {
         text-align: center;
         font-family: $font-family_3;
         font-size: 2.5em;
@@ -457,7 +457,7 @@ h5 {
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 35px 30px 35px;
-    h3 {
+    h2 {
         font-size: 1.5em;
         font-family: $font-family_3;
         margin-bottom: 20px;
@@ -507,7 +507,7 @@ main {
     row-gap: 20px;
     width: auto;
     height: auto;
-    h3 {
+    h2 {
         font-family: $font-family_3;
         font-size: 1.5em;
         padding: 50px 10px 0;
@@ -709,7 +709,7 @@ ul {
             flex-direction: row;
             column-gap: 15px;
         }
-        h3 {
+        h2 {
             font-family: $font-family_3;
             font-size: 1.5em;
             padding: 50px 10px 0;
@@ -762,7 +762,7 @@ ul {
         background-position: center;
     }
     .etapes {
-        h3 {
+        h2 {
             font-size: 1.5em;
             font-family: $font-family_3;
             margin-left: 170px;
